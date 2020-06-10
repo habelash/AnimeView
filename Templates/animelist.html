@@ -1,0 +1,163 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>Anime List</title>
+     <link rel="icon" href="{% static 'main/images/alogo.png' %}" type="image/png" sizes="16x16">
+    <!-- Stylesheets & Fonts -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700"
+        rel="stylesheet">
+    <!-- Plugins Stylesheets -->
+    <link rel="stylesheet" href=" {% static 'main/css/loader/loaders.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/font-awesome/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css '%}">
+    <link rel="stylesheet" href="{% static 'main/css/aos/aos.css '%}">
+    <link rel="stylesheet" href="{% static 'main/css/swiper/swiper.css '%}">
+    <link rel="stylesheet" href="{% static 'main/css/lightgallery.min.css' %}">
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <!-- Responsive Stylesheet -->
+    <link rel="stylesheet" href="{% static 'main/css/responsive.css' %}">
+</head>
+
+<body>
+    <!-- Loader Start -->
+    <div class="css-loader">
+        <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
+    </div>
+        <header class="position-absolute w-100">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'main/images/#'%}" alt="Anime View"></a>
+                <div class="group d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+                </div>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'animelist' %}">Anime List</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Top Anime</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'searchanime' %}">Watch</a></li>
+                    </ul>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input class="field form-control" id="s" name="s" type="text" placeholder="Search">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="searchsubmit" name="submit" type="submit"
+                                    value="Search">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="services">
+        <div class="container">
+            <div class="title text-center">
+                <h6>Anime List</h6>
+                <h1 class="title-blue">Choose Your Loved One </h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+                            <img class="mr-4" src="{% static 'main/images/one.png' %}" alt="One piece" style="height:50px;">
+                            <div class="media-body">
+                                <h5><a href="{% url 'onepiece' ep_no=1 %}">One Piece </a> </h5>
+                                One Piece is a Japanese shōnen manga series written and illustrated by Eichiro Oda.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
+                            <img class="mr-4" src="{% static 'main/images/two.png' %}" alt="Naruto" style="height:50px;">
+                            <div class="media-body">
+                                <h5>Naruto</h5>
+                                Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                            <img class="mr-4" src="{% static 'main/images/three.png' %}" alt="Aot" style="height:50px">
+                            <div class="media-body">
+                                <h5>Attack On Titans</h5>
+                                When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+                            <img class="mr-4" src="{% static 'main/images/four.png' %}" alt="Haikyu" style="height:50px">
+                            <div class="media-body">
+                                <h5>Haikyu</h5>
+                                A tale of youth and volleyball.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
+                            <img class="mr-4" src="{% static 'main/images/five.jpg' %}" alt="Bnha" style="height:50px">
+                            <div class="media-body">
+                                <h5>My Hero Accademy</h5>
+                                My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                            <img class="mr-4" src="{% static 'main/images/six.jpeg'%}" alt="opm" style="height:50px">
+                            <div class="media-body">
+                                <h5>One Punch Man</h5>
+                                Saitama is a strong superhero who defeats villains with just a single punch.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <!-- Foot Note Start -->
+        <div class="foot-note">
+            <div class="container">
+                <div
+                    class="footer-content text-center text-lg-left d-lg-flex justify-content-between align-items-center">
+                    <p class="mb-0" data-aos="fade-right" data-aos-offset="0">&copy; 2019 All Rights Reserved. Design by <a href="#" target="_blank" class="fh5-link">Anime View</a>.</p>
+                    <p class="mb-0" data-aos="fade-left" data-aos-offset="0"><a href="#">Know More</a><a href="#">Privacy & Security Statement</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Foot Note End -->
+    </footer>
+    <!-- Footer Endt -->
+    <!--jQuery-->
+    <script src="{% static 'main/js/jquery-3.3.1.js' %}"></script>
+    <!--Plugins-->
+    <script src="{% static 'main/js/bootstrap.bundle.js'%}"></script>
+    <script src="{% static 'main/js/loaders.css.js' %}"></script>
+    <script src="{% static 'main/js/aos.js' %}"></script>
+    <script src="{% static 'main/js/swiper.min.js' %}"></script>
+    <script src="{% static 'main/js/lightgallery-all.min.js '%}"></script>
+    <!--Template Script-->
+    <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+
+</html>
