@@ -79,7 +79,7 @@
                         <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
                             <img class="mr-4" src="{{ STATIC_URL }}/media/{{ detail.image }}" alt="img" style="height:50px;">
                             <div class="media-body">
-                                <h5><a href="{% url 'onepiece' ep_no=1%}">{{ detail.name }} </a> </h5>
+                                <h5><a href="{{ detail.url }}/Episode/1">{{ detail.name }} </a> </h5>
                                 {{ detail.Discription}}
                             </div>
                         </div>

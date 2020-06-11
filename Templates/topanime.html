@@ -76,7 +76,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="{% url 'index' %}">
-                                <img src="{% static 'watchanime/images/logo.svg' %}" alt="Logo">
+                                <img src="{% static 'main/images/logo.png' %}" alt="Logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -130,12 +130,12 @@
                     <a href="">
                         <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <div class="services-icon">
-                                <img width="80" height="80" src = "{{ STATIC_URL }}/media/{{ detail.image }}" alt="img">
+                                <img width="80" height="80" src = "{{ STATIC_URL }}media/{{ detail.image }}" alt="img">
                             </div>
                             <div class="services-content mt-30">
-                                <h4 class="services-title"><a href=""><u>{{ detail.name }}</u></a></h4>
+                                <h4 class="services-title"><a href="{{ detail.url}}/Episode/1"><u>{{ detail.name }}</u></a></h4>
                                 <p class="text">{{ detail.Discription }}</p>
-                                <a class="more" href=""><u>Watch Now </u><i class="lni-chevron-right"></i></a>
+                                <a class="more" href="{{ detail.url}}/Episode/1"><u>Watch Now </u><i class="lni-chevron-right"></i></a>
                             </div>
                         </div> <!-- single services -->
                     </a>

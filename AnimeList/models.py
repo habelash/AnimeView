@@ -7,6 +7,9 @@ class onepiece(models.Model):
     Discription = models.TextField()
     image = models.ImageField(upload_to='media')
 
+    def __str__(self):
+        return 'Episode'
+
     class Meta:
         verbose_name_plural = 'One Piece'
 
@@ -129,3 +132,23 @@ class fairytail(models.Model):
 
     class Meta:
         verbose_name_plural = 'Fairy Tail'
+
+
+class boruto(models.Model):
+    Episode = models.PositiveIntegerField()
+    EpisodeLink = models.URLField(max_length=200)
+    Discription = models.TextField()
+    image = models.ImageField(upload_to='media')
+
+    class Meta:
+        verbose_name_plural = 'Boruto'
+
+
+class tokyoghoul(models.Model):
+    Episode = models.PositiveIntegerField()
+    EpisodeLink = models.URLField(max_length=200)
+    Discription = models.TextField()
+    image = models.ImageField(upload_to='media')
+
+    class Meta:
+        verbose_name_plural = 'Tokyo Ghoul'
