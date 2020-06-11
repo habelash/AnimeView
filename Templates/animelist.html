@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -35,7 +36,7 @@
         <header class="position-absolute w-100">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'main/images/#'%}" alt="Anime View"></a>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'main/images/logo.png'%}" alt="Anime View"></a>
                 <div class="group d-flex align-items-center">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -49,7 +50,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'animelist' %}">Anime List</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Top Anime</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'topanime' %}">Top Anime</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'searchanime' %}">Watch</a></li>
                     </ul>
                     <form class="bg-white search-form" method="get" id="searchform">
@@ -73,60 +74,17 @@
             </div>
             <div class="container">
                 <div class="row">
+                    {% for detail in details %}
                     <div class="col-sm-6 col-lg-4">
                         <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
-                            <img class="mr-4" src="{% static 'main/images/one.png' %}" alt="One piece" style="height:50px;">
+                            <img class="mr-4" src="{{ STATIC_URL }}/media/{{ detail.image }}" alt="img" style="height:50px;">
                             <div class="media-body">
-                                <h5><a href="{% url 'onepiece' ep_no=1 %}">One Piece </a> </h5>
-                                One Piece is a Japanese shōnen manga series written and illustrated by Eichiro Oda.
+                                <h5><a href="{% url 'onepiece' ep_no=1%}">{{ detail.name }} </a> </h5>
+                                {{ detail.Discription}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-                            <img class="mr-4" src="{% static 'main/images/two.png' %}" alt="Naruto" style="height:50px;">
-                            <div class="media-body">
-                                <h5>Naruto</h5>
-                                Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
-                            <img class="mr-4" src="{% static 'main/images/three.png' %}" alt="Aot" style="height:50px">
-                            <div class="media-body">
-                                <h5>Attack On Titans</h5>
-                                When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
-                            <img class="mr-4" src="{% static 'main/images/four.png' %}" alt="Haikyu" style="height:50px">
-                            <div class="media-body">
-                                <h5>Haikyu</h5>
-                                A tale of youth and volleyball.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-                            <img class="mr-4" src="{% static 'main/images/five.jpg' %}" alt="Bnha" style="height:50px">
-                            <div class="media-body">
-                                <h5>My Hero Accademy</h5>
-                                My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
-                            <img class="mr-4" src="{% static 'main/images/six.jpeg'%}" alt="opm" style="height:50px">
-                            <div class="media-body">
-                                <h5>One Punch Man</h5>
-                                Saitama is a strong superhero who defeats villains with just a single punch.
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
