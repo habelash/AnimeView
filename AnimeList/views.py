@@ -42,7 +42,8 @@ def one_piece(request, ep_no):
     context = {
         'display': display,
         "anime": onepiece.objects.all().order_by('Episode'),
-        "link": 'onepiece'
+        "link": 'onepiece',
+        "topanime": topanime.objects.all()
     }
     return render(request, 'watchanime.html', context)
 
